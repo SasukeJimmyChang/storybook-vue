@@ -1,6 +1,6 @@
 
 <template>
-  <PureInboxScreen :error="isError" />
+  <PureInboxScreen :error="isError" :tasks="tasks" />
 </template>
 
 <script>
@@ -20,7 +20,8 @@
       //👇 Retrieves the error from the store's state
       const isError = computed(() => store.status === 'error')
       return {
-        isError
+        isError,
+        tasks: store.tasks
       }
     }
   }

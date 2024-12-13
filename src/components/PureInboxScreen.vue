@@ -12,7 +12,7 @@
       <nav>
         <h1 class="title-page">Taskbox</h1>
       </nav>
-      <TaskList />
+      <TaskList :tasks="tasks" />
     </div>
   </div>
 </template>
@@ -23,7 +23,8 @@
     name: 'PureInboxScreen',
     components: { TaskList },
     props: {
-      error: { type: Boolean, default: false }
+      error: { type: Boolean, default: false },
+      tasks: { type: Array, required: true, default: () => [] }
     }
   }
 </script>
